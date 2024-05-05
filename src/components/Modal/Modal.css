@@ -1,0 +1,78 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.modal-container {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+
+  aspect-ratio: 4/3;
+
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  background-image: radial-gradient(
+    circle at 10% 90%,
+    var(--purple-light) 1%,
+    var(--purple)
+  );
+  overflow: hidden;
+}
+
+.modal-toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  padding-inline: 1rem;
+}
+
+.modal-toolbar::after {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.modal-toolbar h3 {
+  font-size: 1rem;
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+
+.toolbar-btn:hover {
+  background-color: var(--red-dark);
+  cursor: pointer;
+}
+
+.toolbar-btn:hover > svg {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.toolbar-btn > svg {
+  width: 0.5rem;
+  fill: white;
+}
